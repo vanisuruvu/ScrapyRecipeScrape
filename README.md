@@ -2,12 +2,12 @@
 ![image](https://user-images.githubusercontent.com/76887982/233875246-de4d16f1-0e48-4055-846a-1e881d236b52.png)
 1. Execute above commands. 
 2. Retrieve url list for recipes starting with A. in recipes.py
+```
 import scrapy
 import json
 import re
 
 class RecipesSpider(scrapy.Spider):
-
     name = 'recipes'
     allowed_domains = ['www.tarladalal.com']
     start_urls = ['https://www.tarladalal.com/RecipeAtoZ.aspx']
@@ -22,6 +22,7 @@ class RecipesSpider(scrapy.Spider):
         #     next_page = response.urljoin(response.xpath("//a[@class='rescurrpg']/following-sibling::a[1]/@href").get())
         #     if next_page:
         #         yield scrapy.Request(url=next_page, callback=self.parse)
+		```
 3. Extract recipe urls into Aurls.txt file: in recipes.py
 def parse(self, response):
         # f = open('recipes_A_Urls.json')
