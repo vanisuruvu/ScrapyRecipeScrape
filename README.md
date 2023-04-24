@@ -2,10 +2,16 @@
 ![image](https://user-images.githubusercontent.com/76887982/233875246-de4d16f1-0e48-4055-846a-1e881d236b52.png)
 1. Execute above commands. 
 2. Retrieve url list for recipes starting with A. in recipes.py
-name = 'recipes'
+import scrapy
+import json
+import re
+
+class RecipesSpider(scrapy.Spider):
+
+    name = 'recipes'
     allowed_domains = ['www.tarladalal.com']
     start_urls = ['https://www.tarladalal.com/RecipeAtoZ.aspx']
-def parse(self, response):
+    def parse(self, response):
         #  for recipe in response.xpath("//span[@class='rcc_recipename']/a"):
         #     yield{
         #         'recipe':recipe.xpath("./@href").get(),
